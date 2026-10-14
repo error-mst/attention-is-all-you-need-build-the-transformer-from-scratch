@@ -65,11 +65,23 @@ import torch
 def stack_padded_sequences_to_batch(padded_sequences):
     return torch.tensor(padded_sequences, dtype=torch.long)
 
-# Step 7 - scale_embeddings_by_sqrt_d_model (not yet solved)
-# TODO: implement
+# Step 7 - scale_embeddings_by_sqrt_d_model
+import math
+import torch
 
-# Step 8 - compute_positional_div_term (not yet solved)
-# TODO: implement
+def scale_embeddings_by_sqrt_d_model(embeddings, d_model):
+    d_model = torch.tensor(d_model)
+
+    return embeddings * d_model.sqrt()
+
+# Step 8 - compute_positional_div_term
+import torch
+
+def compute_positional_div_term(d_model):
+    tensor = torch.arange(d_model // 2, dtype=torch.float32)
+    tensor = 10000 ** (-2 * tensor / d_model)
+
+    return tensor
 
 # Step 9 - build_position_index_column (not yet solved)
 # TODO: implement
