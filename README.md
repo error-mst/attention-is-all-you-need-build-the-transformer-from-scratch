@@ -18,8 +18,8 @@ python scaffold.py
 - [x] **6.** stack_padded_sequences_to_batch
 - [x] **7.** scale_embeddings_by_sqrt_d_model
 - [x] **8.** compute_positional_div_term
-- [ ] **9.** build_position_index_column
-- [ ] **10.** fill_even_indices_with_sin
+- [x] **9.** build_position_index_column
+- [x] **10.** fill_even_indices_with_sin
 - [ ] **11.** fill_odd_indices_with_cos
 - [ ] **12.** build_sinusoidal_positional_encoding
 - [ ] **13.** add_positional_encoding_to_embeddings

@@ -83,11 +83,26 @@ def compute_positional_div_term(d_model):
 
     return tensor
 
-# Step 9 - build_position_index_column (not yet solved)
-# TODO: implement
+# Step 9 - build_position_index_column
+import torch
 
-# Step 10 - fill_even_indices_with_sin (not yet solved)
-# TODO: implement
+def build_position_index_column(max_len):
+    tensor = torch.arange(max_len, dtype=torch.float32)
+    tensor = tensor.unsqueeze(1)
+
+    return tensor
+
+# Step 10 - fill_even_indices_with_sin
+import torch
+
+def fill_even_indices_with_sin(pe, position, div_term):
+    pos = position.view(-1, 1)
+    dv = div_term.view(1, -1)
+
+    sin_values = torch.sin(pos * dv)
+    pe[:, ::2] = sin_values
+
+    return pe
 
 # Step 11 - fill_odd_indices_with_cos (not yet solved)
 # TODO: implement
